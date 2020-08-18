@@ -23,4 +23,6 @@ Laatste leuke feature: de 'Bookings details' is een herhaling van de 'Artist/Eve
 - Checklists
 - Asset manager (media)
 - Papers (contracts, invoices, statements)
+
+
 And of course the Artist Module, for artists to see there schedule.
