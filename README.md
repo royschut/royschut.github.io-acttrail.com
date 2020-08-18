@@ -9,7 +9,8 @@ Alle metadata is momenteel placeholder.
 - MaterialUI
 - Redux, Redux Toolkit en createAsyncThunk
 - Async api calls
-- Function components and effect hooks
+- Function components en effect hooks
+- Backend: PHP API en MySQL DB
 
 De UI is mobile-first responsive met de items in Grid- of Listweergave.
 Bij een gekozen item, kun je de grid singleline weer openen, om snel te switchen tussen subpagina's van verschillende artists/events.
