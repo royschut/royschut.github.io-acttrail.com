@@ -6,10 +6,14 @@ import {
   makeStyles,
   Avatar,
   ListItemAvatar,
+  Fade,
+  Zoom,
 } from "@material-ui/core";
 import { useState } from "react";
 
 import IconBtn from "../nav/IconBtn";
+import CoolGridItem from "./CoolGridItem";
+import { BaseURL, UploadURL } from "../../../data/Constants";
 
 const useStyles = makeStyles((theme) => ({
   small: {
@@ -39,48 +43,52 @@ export default function CoolList(props) {
   const [hover, setHover] = useState();
 
   const itemClicked = (id) => {
+    // console.log("clicked", id);
     if (props.deleteMode) props.requestDelete(id);
     else props.itemClicked(id);
   };
+
+  let cnt = 0; //For timeout calculation (ID can be too high)
 
   return (
     <List className={"CoolList"} component="nav">
       {props.list && (
         <>
-          {props.list.map((l, i) => (
-            <ListItem
-              key={i}
-              onClick={(e) => itemClicked(l.id)}
-              selected={props.selectedID === l.id}
-              onMouseOver={(e) => setHover(i)}
-              onMouseOut={(e) => setHover(false)}
-            >
-              <ListItemAvatar>
-                <Avatar
-                  src={"img/" + l.assetsrc}
-                  alt={l.name}
-                  className={classes.large}
-                >
-                  {i.name}
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                style={{ width: "100%" }}
-                primary={l.name}
-                secondary={l[props.secondaryKey]}
-                // secondary={Math.round(Math.random() * 20) + " Bookings"}
-              />
-              {hover === i && props.deleteMode && (
-                <IconBtn
-                  label="Delete"
-                  iconClass="fas fa-trash-alt"
-                  size="small"
-                  selectedColor="error"
-                  selected
-                  onMouseOver={(e) => setHover(i)}
+          {props.list.map((l, id) => (
+            <Zoom in={props.list.length > 0} timeout={100 * cnt++} key={id}>
+              <ListItem
+                key={id}
+                onClick={(e) => itemClicked(l.id)}
+                selected={props.selectedID === l.id}
+                onMouseOver={(e) => setHover(id)}
+                onMouseOut={(e) => setHover(false)}
+              >
+                <ListItemAvatar>
+                  <Avatar
+                    src={UploadURL + l.assetsrc}
+                    alt={l.name}
+                    className={classes.large}
+                  >
+                    {l.name}
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  style={{ width: "100%" }}
+                  primary={l.name}
+                  secondary={l[props.secondaryKey]}
                 />
-              )}
-            </ListItem>
+                {hover === id && props.deleteMode && (
+                  <IconBtn
+                    label="Delete"
+                    iconClass="fas fa-trash-alt"
+                    size="small"
+                    selectedColor="error"
+                    selected
+                    onMouseOver={(e) => setHover(id)}
+                  />
+                )}
+              </ListItem>
+            </Zoom>
           ))}
         </>
       )}

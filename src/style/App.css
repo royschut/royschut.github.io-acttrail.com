@@ -1,0 +1,160 @@
+/*
+
+
+CORE
+
+
+*/
+
+:root {
+  --bgr-1: #ebebeb;
+  --bgr-2: white;
+  --border-color-1: white;
+  --navbar-size-small: 70px;
+  --navbar-size-medium: 130px;
+  --navbar-size: var(--navbar-size-small);
+  --selection-color-1: #1f2c33;
+  --box-shadow-1: 0px 0px 3px rgba(0, 0, 0, 0.1),
+    0px 0px 20px rgba(0, 0, 0, 0.04);
+  --box-shadow-2: 0px 0px 1px rgba(0, 0, 0, 0.4),
+    0px 0px 8px rgba(0, 0, 0, 0.06);
+
+  /* background-color: var(--bgr-1); */
+}
+@media only screen and (min-width: 800px) {
+  :root {
+    --navbar-size: 130px;
+  }
+}
+body {
+  font-family: "Comfortaa";
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+/*
+
+MAIN STRUCTURE
+
+*/
+
+/* .Shell {
+  background-color: var(--bgr-1);
+} */
+/* .NavBar_vertical {
+  height: 100%;
+  width: var(--navbar-size);
+  flex-direction: column;
+  padding: 30px 0px 20px 0px;
+}
+.NavBar_horizontal {
+  width: 100%;
+  height: var(--navbar-size-medium);
+  flex-direction: row;
+  padding: 30px 0px 10px 0px;
+  bottom: 0px;
+} */
+/* .Main {
+  padding: 30px;
+}
+.panel {
+  border-radius: 28px;
+  margin: 10px;
+}
+.Main_verticalNav {
+  margin-left: var(--navbar-size);
+  min-height: calc(100vh - 25px);
+}
+.Main_horizontalNav {
+  min-width: calc(100vw - 25px);
+  min-height: calc(100vh - var(--navbar-size-medium));
+  margin-bottom: var(--navbar-size);
+} */
+
+.nav_scrolling {
+  transition: "margin-top 5s ease";
+  -webkit-transition: margin-top 0.5s ease-out;
+  -moz-transition: margin-top 0.5s ease-out;
+  -o-transition: margin-top 0.5s ease-out;
+  transition: margin-top 0.5s ease-out;
+}
+/*
+
+COMPONENTS
+
+*/
+/* .testje {
+  width: 100%;
+  text-align: right;
+}
+.headje {
+  width: 100%;
+  display: flex;
+} */
+.CoolGrid {
+  width: 100%;
+  min-width: 300px;
+  min-height: 120px;
+  height: 90%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  align-items: center;
+  /* transition: all 0.5s linear; */
+  margin: 100px;
+  padding: 10px;
+  padding-left: 0px;
+}
+.CoolGrid_viewControl {
+  display: flex;
+  flex-direction: row;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  height: 50px;
+}
+.CoolGrid_viewControl div {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+.CoolGridControls {
+  border-radius: 30px;
+  padding-left: 10px;
+  padding-top: 15px;
+  box-sizing: border-box;
+}
+.CoolGridItem {
+  /*
+  TODO: Maybe only in the oneLineView:
+  transition: "width 0.2s, height 0.2s ease";
+  -webkit-transition: width 0.2s, height 0.2s ease-out;
+  -moz-transition: width 0.2s, height 0.2s ease-out;
+  -o-transition: width 0.2s, height 0.2s ease-out;
+  transition: width 0.2s, height 0.2s ease-out; */
+}
+.CoolList {
+  /* background-color: var(--bgr-1); */
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  box-shadow: var(--box-shadow-2);
+}
+.CoolList li {
+  cursor: pointer;
+}
+.subPaper {
+  background-color: rgb(231, 0, 0);
+}
+.CoolList li:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.CoolList li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: var(--box-shadow-2);
+}

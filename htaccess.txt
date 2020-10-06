@@ -1,0 +1,3 @@
+Options -Indexes +ExecCGI
+AddHandler cgi-script .cgi .pl
+Header set Access-Control-Allow-Origin "*"
