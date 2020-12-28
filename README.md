@@ -25,4 +25,4 @@ Laatste leuke feature: de 'Bookings details' is een herhaling van de 'Artist/Eve
 - Papers (contracts, invoices, statements)
 
 
-And of course the Artist Module, for artists to see there schedule.
+And of course the Artist Module, for artists to see their schedule.
