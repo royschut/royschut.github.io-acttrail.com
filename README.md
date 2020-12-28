@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App to manage bookings, artists and events within the Music scene.   (in progress)
 
-## Available Scripts
+### Status
+De huidige versie heeft een login en laadt op basis van de user.team_id: artists, events en bookings.
+Je kunt artists en events toevoegen en deze met elkaar koppelen als 'bookings'.
+Alle metadata is momenteel placeholder.
 
-In the project directory, you can run:
+### Technical decisions (/stack)
+- MaterialUI
+- Redux, Redux Toolkit en createAsyncThunk
+- Async api calls
+- Function components en effect hooks
+- Backend: PHP API en MySQL DB
 
-### `npm start`
+De UI is mobile-first responsive met de items in Grid- of Listweergave.
+Bij een gekozen item, kun je de grid singleline weer openen, om snel te switchen tussen subpagina's van verschillende artists/events.
+Bij het openen van een booking kan dit vervolgens ook, dus kun je snel switchen tussen de artist/event combinatie.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Laatste leuke feature: de 'Bookings details' is een herhaling van de 'Artist/Event details' page (ManagerPage.js). Hij herhaalt zichzelf dus met andere waardes. :)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Future features
+- Travel overview
+- Checklists
+- Asset manager (media)
+- Papers (contracts, invoices, statements)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+And of course the Artist Module, for artists to see there schedule.
