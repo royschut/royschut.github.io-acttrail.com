@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mainCardFeatured: {
     background: "none",
-    color: "white",
+    color: theme.palette.secondary.contrastText,
   },
 }));
 export default function ExpandPanel(props) {

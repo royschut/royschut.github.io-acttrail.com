@@ -10,6 +10,7 @@ import {
   updateBooking,
 } from "../../../../redux/booker/bookingsSlice";
 import CoolCard from "../../../general/CoolCard/CoolCard";
+import CoolMiniGrid from "../../../general/CoolGrid/CoolMiniGrid";
 import CoolPageHeader from "../../../general/CoolPageHeader/CoolPageHeader";
 
 const useStyles = makeStyles((theme) => ({
@@ -47,6 +48,15 @@ export default function Bookings(props) {
   return (
     <Paper elevation={2} className={classes.paper}>
       <Grid container spacing={5}>
+        {curBooking && (
+          <Grid item xs={12}>
+            <CoolMiniGrid
+              list={props.bookings}
+              selectedID={curBooking.id}
+              setSelectedID={(id) => props.setSelectedID(id) }
+            />
+          </Grid>
+        )}
         <Grid item xs={12}>
           <CoolPageHeader
             list={props.bookings}

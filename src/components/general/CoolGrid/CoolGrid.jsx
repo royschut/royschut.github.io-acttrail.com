@@ -8,8 +8,10 @@ const useStyles = makeStyles((theme) => {
     grid: {
       backgroundColor: theme.palette.softerBackground,
       boxShadow: "0px 1px 45px 5px rgba(180,180,180,0.09)",
-      border: "1px solid rgba(0,0,0,0.05)",
       borderRadius: 25,
+    },
+    gridBorder: {
+      border: "1px solid rgba(0,0,0,0.05)",
     },
   };
 });
@@ -29,7 +31,11 @@ export default function CoolGrid(props) {
   return (
     <Grid
       container
-      className={"CoolGrid " + classes.grid}
+      className={
+        "CoolGrid " +
+        classes.grid +
+        (props.tiny ? "" : " " + classes.gridBorder)
+      }
       spacing={4}
       direction={props.multiline ? "row" : "column"}
       justify="flex-start"
@@ -45,9 +51,11 @@ export default function CoolGrid(props) {
                   img={tile.assetsrc}
                   name={tile.name}
                   small={props.small ? props.small : !props.multiline}
+                  tiny={props.tiny}
                   selected={tile.id === props.selectedID}
                   onClick={(e) => props.itemClicked(tile.id)}
                   clickable
+                  isSquare={props.isSquare}
                   deleteMode={props.deleteMode}
                 />
               </Grid>

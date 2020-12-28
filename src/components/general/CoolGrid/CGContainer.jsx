@@ -183,6 +183,7 @@ export default function CGContainer(props) {
           list={filteredList(props.list)}
           selectedID={props.selectedID}
           multiline={props.multiline}
+          isSquare={props.isSquare}
           itemClicked={(id) => props.setSelectedID(id)}
         />
       )}
@@ -192,6 +193,7 @@ export default function CGContainer(props) {
           selectedID={props.selectedID}
           deleteMode={deleteMode}
           secondaryKey={props.secondaryKey}
+          isSquare={props.isSquare}
           itemClicked={(id) => props.setSelectedID(id)}
           requestDelete={(id) => props.requestDelete(id)}
         />

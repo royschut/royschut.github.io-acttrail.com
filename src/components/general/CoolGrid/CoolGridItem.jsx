@@ -7,7 +7,7 @@ import {
   Box,
   Card,
 } from "@material-ui/core";
-import { UploadURL } from "../../../data/Constants";
+import { months, UploadURL } from "../../../data/Constants";
 
 const useStyles = makeStyles((theme) => {
   const pRgb = theme.palette.primary.rgb;
@@ -27,6 +27,14 @@ const useStyles = makeStyles((theme) => {
     small: {
       width: theme.spacing(8),
       height: theme.spacing(8),
+    },
+    tinyPlus: {
+      width: theme.spacing(7),
+      height: theme.spacing(7),
+    },
+    tiny: {
+      width: theme.spacing(5),
+      height: theme.spacing(5),
     },
     card: {
       borderRadius: "50%",
@@ -54,17 +62,18 @@ export default function CoolGridItem(props) {
   const classes = useStyles();
   const [hovered, setHovered] = useState();
   const elevation = (hovered ? 2 : 1) + (props.selected ? 7 : 0);
+  const selected = props.selected;
 
-  const size = props.small
-    ? props.selected
-      ? classes.medium
-      : classes.small
-    : classes.large;
+  let size = "";
+  if (props.tiny) size = selected ? classes.tinyPlus : classes.tiny;
+  else if (props.small) size = selected ? classes.medium : classes.small;
+  else size = classes.large;
 
   return (
     <Card
       elevation={elevation}
       className={props.selected ? classes.selCard : classes.card + " " + size}
+      style={{ borderRadius: props.isSquare ? "15%" : "50%" }}
       onMouseEnter={(e) => setHovered(true)}
       onMouseLeave={(e) => setHovered(false)}
     >
@@ -79,6 +88,7 @@ export default function CoolGridItem(props) {
             alt={props.name}
             onClick={(e) => props.onClick()}
             className={"CoolGridItem " + size}
+            style={{ borderRadius: "inherit" }}
           >
             {props.name}
           </Avatar>

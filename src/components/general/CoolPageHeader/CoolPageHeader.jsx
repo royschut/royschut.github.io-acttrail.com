@@ -18,6 +18,7 @@ export default function CoolPageHeader(props) {
                 assetSrc={props.assetSrc}
                 name={props.name}
                 gridHalfOpen={gridHalfOpen}
+                isSquare={props.isSquare}
                 expand={() => setGridHalfOpen(true)}
                 showAll={() => props.showAll()}
                 uploadPic={() => props.requestUploadPic()}
@@ -36,6 +37,7 @@ export default function CoolPageHeader(props) {
                 multiline={false}
                 list={props.list}
                 selectedID={props.selectedID}
+                isSquare={props.isSquare}
                 setSelectedID={(id) => props.setSelectedID(id)}
                 requestCreate={() => props.requestCreate()}
                 requestDelete={(id) => props.requestDelete(id)}

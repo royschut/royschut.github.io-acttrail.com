@@ -37,6 +37,7 @@ import CoolPageHeader from "../../../general/CoolPageHeader/CoolPageHeader";
 import Bookings from "./Bookings";
 import ExpandPanel from "../../../general/CoolCard/ExpandPanel";
 import getFormData from "../../../../data/FormData";
+import CoolMiniGrid from "../../../general/CoolGrid/CoolMiniGrid";
 
 export default function Events() {
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ export default function Events() {
 
   const curEvent = useSelector(selectCurEvent);
   const curBooking = useSelector(selectCurBookingWithArtist);
+
   const team_id = useSelector(selectTeamID);
 
   const venueLoaded = useSelector(isVenueCurEventLoaded);
@@ -93,6 +95,17 @@ export default function Events() {
   };
   return (
     <>
+      {curEventID && (
+        <CoolMiniGrid
+          list={events}
+          selectedID={curEventID}
+          isSquare
+          setSelectedID={(id) => {
+            onSetCurEventID(id);
+            onSetCurBookingID();
+          }}
+        />
+      )}
       {!curEventID && (
         <Box display="flex" style={{ height: "100%", flexDirection: "column" }}>
           <CGContainer
@@ -100,6 +113,7 @@ export default function Events() {
             multiline={true}
             list={events}
             selectedID={curEventID}
+            isSquare
             secondaryKey={"subname"}
             setSelectedID={(id) => {
               onSetCurEventID(id);
@@ -118,6 +132,7 @@ export default function Events() {
             item={curEvent}
             assetSrc={curEvent.assetsrc}
             name={curEvent.name}
+            isSquare
             showAll={() => {
               onSetCurEventID();
               onSetCurBookingID();
@@ -188,16 +203,16 @@ export default function Events() {
             </Grid>
           )}
           {curBookingID && (
-            <Grid item xs={12} style={{ height: "100%" }}>
+            // <Grid item xs={12} style={{ height: "100%" }}>
               <Bookings
                 bookings={bookings}
                 selectedID={curBookingID}
                 assetSrc={curBooking.assetsrc}
-                name={curBooking.name}
+                name={`${curBooking.name} @ ${curEvent.name}`}
                 setSelectedID={(id) => onSetCurBookingID(id)}
                 showAll={() => onSetCurBookingID()}
               />
-            </Grid>
+            // </Grid>
           )}
         </>
       )}

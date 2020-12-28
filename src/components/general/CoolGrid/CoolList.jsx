@@ -68,6 +68,7 @@ export default function CoolList(props) {
                     src={UploadURL + l.assetsrc}
                     alt={l.name}
                     className={classes.large}
+                    style={{ borderRadius: props.isSquare ? "15%" : "50%" }}
                   >
                     {l.name}
                   </Avatar>

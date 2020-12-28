@@ -35,6 +35,7 @@ import CoolPageHeader from "../../../general/CoolPageHeader";
 import Bookings from "./Bookings";
 import getFormData from "../../../../data/FormData";
 import { formatDate, months } from "../../../../data/Constants";
+import CoolMiniGrid from "../../../general/CoolGrid/CoolMiniGrid";
 
 export default function Artists() {
   const dispatch = useDispatch();
@@ -88,6 +89,16 @@ export default function Artists() {
 
   return (
     <>
+      {curArtistID && (
+        <CoolMiniGrid
+          list={artists}
+          selectedID={curArtistID}
+          setSelectedID={(id) => {
+            onSetCurArtistID(id);
+            onSetCurBookingID();
+          }}
+        />
+      )}
       {!curArtistID && (
         <Box display="flex" style={{ height: "100%", flexDirection: "column" }}>
           <CGContainer
@@ -148,6 +159,7 @@ export default function Artists() {
                         list={bookings}
                         secondaryKey={"dateFormatted"}
                         expandable
+                        isSquare
                         setSelectedID={(id) => onSetCurBookingID(id)}
                         requestCreate={() => requestNewBooking()}
                         requestDelete={(id) => requestDeleteBooking(id)}
@@ -155,18 +167,6 @@ export default function Artists() {
                     </ExpandPanel>
                   </Grid>
                   <Grid item>
-                    <Box mb={5}>
-                      {/* <CoolCard
-                        title="Fees"
-                        headerIcon={"fas fa-money-bill"}
-                        formData={getFormData({
-                          type: "fee",
-                          obj: curArtist.fee,
-                          props: ["standardfee", "bottomfee"],
-                        })}
-                        onChange={(obj) => onUpdateFee(obj)}
-                      /> */}
-                    </Box>
                     <Box mb={5}>
                       <CoolCard
                         title="Media"
@@ -189,7 +189,7 @@ export default function Artists() {
                     bookings={bookings}
                     selectedID={curBookingID}
                     assetSrc={curBooking.assetsrc}
-                    name={curBooking.name}
+                    name={`${curArtist.name} @ ${curBooking.name}`}
                     setSelectedID={(id) => onSetCurBookingID(id)}
                     showAll={() => onSetCurBookingID()}
                   />

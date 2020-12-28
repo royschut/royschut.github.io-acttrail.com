@@ -4,7 +4,8 @@ export default function appTheme(props) {
   const dark = props.darkMode === true;
 
   const p = dark ? "#7440CF" : "#7440CF";
-  const s = dark ? "#FFB429" : "#FFB429";
+  // const s = dark ? "#FFB429" : "#FFB429";
+  const s = "#ffd359";
 
   const t = dark ? "#EDEDED" : "#303030";
 
@@ -21,7 +22,7 @@ export default function appTheme(props) {
       secondary: {
         main: s,
         rgb: convertToRGB(s),
-        contrastText: dark ? "black" : "white",
+        // contrastText: dark ? "black" : "white",
         boxShadow: "1px 1px 3px 1px rgba(" + convertToRGB(s) + ",0.1)",
       },
       contrastThreshold: 3,

@@ -43,7 +43,7 @@ export default function ArtistPageAvatar(props) {
       <Card
         elevation={2}
         style={{
-          borderRadius: "50%",
+          borderRadius: props.isSquare ? "15%" : "50%",
           opacity: "1",
           border: "1px solid white",
           boxShadow:
@@ -54,7 +54,11 @@ export default function ArtistPageAvatar(props) {
         <Avatar
           src={UploadURL + props.assetSrc}
           alt={props.name}
-          style={{ width: "100%", height: "100%" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "inherit",
+          }}
         >
           {props.name}
         </Avatar>
