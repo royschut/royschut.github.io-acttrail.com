@@ -3,7 +3,6 @@ import {
   Box,
   FormControl,
   Icon,
-  makeStyles,
   TextField,
   Typography,
 } from "@material-ui/core";

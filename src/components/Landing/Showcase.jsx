@@ -75,13 +75,12 @@ export default function Showcase(props) {
     </Box>
   );
 }
-function Img(props) {
+function Img({ alt="Presentation image", assets }) {
   const classes = useStyles();
-  const assets = props.assets;
 
   if (assets.length === 1) {
     return (
-      <img src={"img/landing/showcase/" + assets[0]} className={classes.img} />
+      <img src={`img/landing/showcase/${assets[0]}`} className={classes.img} alt={alt} />
     );
   } else if (assets.length > 1) {
     const imgDist = 140;
@@ -91,6 +90,7 @@ function Img(props) {
           <img
             src={"img/landing/showcase/" + assets[i]}
             className={classes.img}
+            alt={alt}
             style={{
               position: "absolute",
               left: `calc(10px + ${i} * ${imgDist}px)`,

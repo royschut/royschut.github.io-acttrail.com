@@ -64,7 +64,7 @@ export default function Events() {
       const crud = curEvent.venue_id ? "r" : "c";
       dispatch(crudVenue({ crud: crud, event_id: curEventID }));
     }
-  }, [venueLoaded, curEventID]);
+  }, [venueLoaded, curEventID, curEvent.venue_id, dispatch]);
 
   //Setters (actions)
   const onSetCurEventID = (id) => {
@@ -87,9 +87,9 @@ export default function Events() {
   const onUpdateVenue = (obj) => {
     dispatch(crudVenue({ crud: "u", obj: { ...obj, id: curEventID } }));
   };
-  const onUpdateBooking = (obj) => {
-    // dispatch(updateArtist({ ...obj, id: curArtistID }));
-  };
+  // const onUpdateBooking = (obj) => {
+  //   // dispatch(updateArtist({ ...obj, id: curArtistID }));
+  // };
   const onUpdateMedia = (obj) => {
     //dispatch();
   };

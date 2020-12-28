@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Button, Typography, Box, makeStyles } from "@material-ui/core";
+import React, {  useState } from "react";
+import { Button, Box, makeStyles } from "@material-ui/core";
 
 import { days, months } from "../../../data/Constants";
-import CoolList from "../CoolGrid/CoolList";
-import CoolGrid from "../CoolGrid/CoolGrid";
 import CoolGridItem from "../CoolGrid/CoolGridItem";
 
 const useStyles = makeStyles((theme) => {

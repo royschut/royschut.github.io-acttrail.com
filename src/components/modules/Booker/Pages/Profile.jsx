@@ -1,10 +1,7 @@
 import {
   Box,
-  Button,
-  Card,
   Grid,
   Icon,
-  IconButton,
   Typography,
 } from "@material-ui/core";
 import React, { useEffect } from "react";
@@ -14,9 +11,7 @@ import { requestNewBooker } from "../../../../redux/booker/dialogSlice";
 import {
   isTeamDetailsLoaded,
   loadTeamDetails,
-  logout,
   selectBookers,
-  selectTeam,
   selectUser,
   updateUser,
 } from "../../../../redux/userSlice";
@@ -39,7 +34,7 @@ export default function Profile(props) {
 
   useEffect(() => {
     if (!teamsLoaded) dispatch(loadTeamDetails(userVO.id));
-  }, [teamsLoaded]);
+  }, [dispatch, teamsLoaded, userVO.id]);
 
   return (
     <Box m={5}>

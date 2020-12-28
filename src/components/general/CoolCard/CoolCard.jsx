@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Box, makeStyles } from "@material-ui/core";
 
 import IconBtn from "../nav/IconBtn";
@@ -20,18 +20,15 @@ export const CoolCard = (props) => {
 
   const [items, setItems] = useState();
 
-  useEffect(() => {
-    if (props.formData) renderCopy();
-  }, [props.formData]);
-
-  const renderCopy = () => {
+  
+  const renderCopy = useCallback(() => {
     let copy = [];
     props.formData.forEach((i) => {
       copy.push({ ...i });
     });
     setItems(copy);
-  };
-
+  }, [props.formData]);
+  
   const onChange = (i, value) => {
     let copy = [];
     items.forEach((it) => copy.push(it));
@@ -49,7 +46,10 @@ export const CoolCard = (props) => {
     renderCopy();
     setEditing(false);
   };
-
+  
+  useEffect(() => {
+    if (props.formData) renderCopy();
+  }, [props.formData, renderCopy]);
   //VIEW
 
   const expandable = props.expandable !== false;

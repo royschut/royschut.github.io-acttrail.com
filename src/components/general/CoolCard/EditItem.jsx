@@ -1,6 +1,5 @@
 import {
   Box,
-  Dialog,
   FormControl,
   InputAdornment,
   makeStyles,
@@ -41,7 +40,7 @@ export default function EditItem(props) {
   const isMoney = valProps.type === "money";
 
   return (
-    <Box display="flex" style={{ width: "100%" }}>
+    <Box className={classes.root} display="flex" style={{ width: "100%" }}>
       {!props.hideKeys && (
         <Box style={{ width: "30%" }}>
           <Typography variant="body2">{item.label + ": "}</Typography>
@@ -87,7 +86,6 @@ function ItemTextfield(props) {
           id={item.key}
           value={value}
           multiline={valProps.multiline}
-          variant="outlined"
           size="small"
           margin="dense"
           variant="filled"
@@ -106,7 +104,7 @@ function ItemDate(props) {
 
   const item = props.item;
   const editing = props.editing;
-  const valProps = item.validationProps;
+  // const valProps = item.validationProps;
 
   const value = item.value ? item.value : "";
 
@@ -126,7 +124,6 @@ function ItemDate(props) {
         <TextField
           id={item.key}
           value={value}
-          variant="outlined"
           size="small"
           margin="dense"
           variant="filled"

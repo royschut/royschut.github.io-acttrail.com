@@ -1,5 +1,5 @@
 import { Box, Collapse, Fade, Paper } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Footer from "../Footer";
 
 import LandPanel from "./LandPanel";

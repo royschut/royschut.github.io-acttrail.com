@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => {
 });
 
 export default function IconBtn(props) {
-  const selectedColor = props.selectedColor ? props.selectedColor : "secondary";
   const selectedLabel = props.selectedLabel ? props.selectedLabel : props.label;
 
   const classes = useStyles();

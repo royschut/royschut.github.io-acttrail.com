@@ -59,7 +59,7 @@ export default function BookerDialog(props) {
     if (newBookerAnswer && !isOpen) {
       dispatch(answerNewBooker(newBookerAnswer));
     }
-  }, [newBookerAnswer]);
+  }, [dispatch, isOpen, newBookerAnswer]);
 
   const onSubmit = (val) => {
     if (val) setValue(val);
@@ -174,7 +174,7 @@ export default function BookerDialog(props) {
           </Typography>
         </Box>
       )}
-      {(curRequest === "uploadPicArtist" || curRequest == "uploadPicEvent") && (
+      {(curRequest === "uploadPicArtist" || curRequest === "uploadPicEvent") && (
         <Uploader onChange={(img) => setValue(img)} />
       )}
     </CoolDialog>

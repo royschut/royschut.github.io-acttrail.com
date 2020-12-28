@@ -9,10 +9,9 @@ import {
   setCurArtistID,
   selectCurArtist,
   updateArtist,
-  createArtistFee,
-  updateArtistFee,
+  // createArtistFee,
+  // updateArtistFee,
 } from "../../../../redux/booker/artistsSlice";
-import { selectEventList } from "../../../../redux/booker/eventsSlice";
 import {
   selectCurBookingID,
   setCurBookingID,
@@ -28,13 +27,12 @@ import {
   requestNewBookingForArtist,
   requestUploadPicArtist,
 } from "../../../../redux/booker/dialogSlice";
-import { Box, Collapse, Fade, Grid, Zoom } from "@material-ui/core";
+import { Box, Fade, Grid } from "@material-ui/core";
 import CGContainer from "../../../general/CoolGrid/CGContainer";
 import ExpandPanel from "../../../general/CoolCard/ExpandPanel";
 import CoolPageHeader from "../../../general/CoolPageHeader";
 import Bookings from "./Bookings";
 import getFormData from "../../../../data/FormData";
-import { formatDate, months } from "../../../../data/Constants";
 import CoolMiniGrid from "../../../general/CoolGrid/CoolMiniGrid";
 
 export default function Artists() {
@@ -72,17 +70,17 @@ export default function Artists() {
   const onUpdateArtist = (obj) => {
     dispatch(updateArtist({ ...obj, id: curArtistID }));
   };
-  const onUpdateFee = (obj) => {
-    if (curArtist.fee)
-      dispatch(
-        updateArtistFee({
-          ...obj,
-          artist_id: curArtistID,
-          id: curArtist.fee.id,
-        })
-      );
-    else dispatch(createArtistFee({ ...obj, artist_id: curArtistID }));
-  };
+  // const onUpdateFee = (obj) => {
+  //   if (curArtist.fee)
+  //     dispatch(
+  //       updateArtistFee({
+  //         ...obj,
+  //         artist_id: curArtistID,
+  //         id: curArtist.fee.id,
+  //       })
+  //     );
+  //   else dispatch(createArtistFee({ ...obj, artist_id: curArtistID }));
+  // };
   const onUpdateMedia = (obj) => {
     //todo
   };

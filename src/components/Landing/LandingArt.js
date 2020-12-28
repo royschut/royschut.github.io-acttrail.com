@@ -1,8 +1,8 @@
-import { Box, useTheme } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import React from "react";
 
 export default function LandingArt(props) {
-  const theme = useTheme();
+  // const theme = useTheme();
   const mainColor = "white"; //theme.palette.secondary.main;
   const fillOpacity = 0;
   const strokeWidth = 8;

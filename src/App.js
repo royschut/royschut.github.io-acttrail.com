@@ -37,7 +37,7 @@ export default function App() {
 
   useEffect(() => {
     dispatch(checkSession());
-  }, []);
+  }, [dispatch]);
 
   const classes = useStyles();
 

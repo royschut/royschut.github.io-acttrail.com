@@ -4,7 +4,6 @@ import {
   createSelector,
 } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useDispatch } from "react-redux";
 
 import { CRUD_URL, URL_BOOKER as URL } from "../../data/Constants";
 
@@ -162,6 +161,7 @@ export const eventsSlice = createSlice({
               ...action.meta.arg.obj,
             };
             break;
+          default: break;
         }
       }
     },

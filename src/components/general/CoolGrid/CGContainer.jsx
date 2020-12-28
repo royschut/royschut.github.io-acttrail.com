@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
-  Paper,
   Typography,
-  Collapse,
   IconButton,
   Icon,
-  Card,
   Divider,
   InputBase,
   makeStyles,

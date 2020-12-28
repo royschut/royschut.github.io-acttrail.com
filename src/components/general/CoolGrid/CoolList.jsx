@@ -6,14 +6,12 @@ import {
   makeStyles,
   Avatar,
   ListItemAvatar,
-  Fade,
   Zoom,
 } from "@material-ui/core";
 import { useState } from "react";
 
 import IconBtn from "../nav/IconBtn";
-import CoolGridItem from "./CoolGridItem";
-import { BaseURL, UploadURL } from "../../../data/Constants";
+import { UploadURL } from "../../../data/Constants";
 
 const useStyles = makeStyles((theme) => ({
   small: {

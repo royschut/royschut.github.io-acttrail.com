@@ -2,9 +2,7 @@ import { Box, Button, makeStyles, Typography } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { days, daysFull, months } from "../../../data/Constants";
 import CoolGrid from "../CoolGrid/CoolGrid";
-import CoolGridItem from "../CoolGrid/CoolGridItem";
 import CoolList from "../CoolGrid/CoolList";
-import CalMonth from "./CalMonth";
 const useStyles = makeStyles((theme) => {
   return {
     day: {
@@ -121,7 +119,7 @@ export default function CalDay(props) {
               itemClicked={(id) => props.itemClicked(id)}
             />
           )}
-          {itemsFound.length == 0 && (
+          {itemsFound.length === 0 && (
             <Typography variant="body2" className={classes.italic}>
               - No items -
             </Typography>
@@ -159,7 +157,7 @@ function MiniMonth(props) {
       d.setMonth(d.getMonth());
       setFirstDayCurMonth(d);
     }
-  }, [props.curDay]);
+  }, [firstDayCurMonth, props.curDay]);
 
   const setCurMonth = (nr) => {
     const d = new Date(firstDayCurMonth);
@@ -240,9 +238,9 @@ function MiniDay(props) {
   const isSelectedDay = props.curDay.toDateString() === date.toDateString();
   const isToday = date.toDateString() === new Date().toDateString();
 
-  const itemsFound = props.list.filter(
-    (i) => new Date(i.date).toDateString() === date.toDateString()
-  );
+  // const itemsFound = props.list.filter(
+  //   (i) => new Date(i.date).toDateString() === date.toDateString()
+  // );
   const classes = useStyles();
   return (
     <Box

@@ -103,7 +103,7 @@ export default function BookerModule(props) {
   //DATA
   useEffect(() => {
     props.onMounted();
-  }, []);
+  }, [props]);
 
   useEffect(() => {
     setCurPage(location.pathname.substring(1));
@@ -112,7 +112,7 @@ export default function BookerModule(props) {
     dispatch(setCurArtistID());
     dispatch(setCurEventID());
     dispatch(setCurBookingID());
-  }, [location]);
+  }, [dispatch, location]);
 
   //VIEW
   const navClass = smallScreen

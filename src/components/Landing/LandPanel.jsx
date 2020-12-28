@@ -7,7 +7,7 @@ import {
   Paper,
   Typography,
 } from "@material-ui/core";
-import React, { useState } from "react";
+import React from "react";
 import LandingArt from "./LandingArt";
 
 const useStyles = makeStyles((theme) => {

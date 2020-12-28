@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Avatar,
   Box,
-  Container,
-  Icon,
-  IconButton,
   makeStyles,
-  Typography,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import NavButton from "./NavButton";
-import { logout } from "../../../redux/userSlice";
-import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => {
   return {

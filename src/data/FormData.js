@@ -57,6 +57,8 @@ function getLabelFor(key) {
       return "Standard fee";
     case "bottomfee":
       return "Bottom fee";
+    default: 
+      return "";
   }
 }
 function getValidationPropsFor(key) {

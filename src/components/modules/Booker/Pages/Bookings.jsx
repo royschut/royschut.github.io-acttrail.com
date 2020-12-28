@@ -43,7 +43,7 @@ export default function Bookings(props) {
   useEffect(() => {
     if (props.selectedID && !isCurBookingDetailsLoaded)
       dispatch(loadBookingDetails(props.selectedID));
-  }, [props.selectedID, isCurBookingDetailsLoaded]);
+  }, [props.selectedID, isCurBookingDetailsLoaded, dispatch]);
 
   return (
     <Paper elevation={2} className={classes.paper}>

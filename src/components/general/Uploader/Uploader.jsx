@@ -41,7 +41,7 @@ export default function Uploader(props) {
     fileInput.current.value = "";
   };
 
-  const onAddFile = (e) => {};
+  // const onAddFile = (e) => {};
 
   const classes = useStyles();
 

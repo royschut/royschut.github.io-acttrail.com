@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Link from "@material-ui/core/Link";
 import Box from "@material-ui/core/Box";
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VS_LANDING = 1;
+// const VS_LANDING = 1;
 const VS_SIGNIN = 2;
 const VS_SIGNUP = 3;
 

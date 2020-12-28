@@ -4,10 +4,9 @@ import {
   Avatar,
   makeStyles,
   Tooltip,
-  Box,
   Card,
 } from "@material-ui/core";
-import { months, UploadURL } from "../../../data/Constants";
+import { UploadURL } from "../../../data/Constants";
 
 const useStyles = makeStyles((theme) => {
   const pRgb = theme.palette.primary.rgb;
@@ -43,7 +42,7 @@ const useStyles = makeStyles((theme) => {
       opacity: "0.9",
       "&:hover": {
         opacity: 1,
-        border: "1px solid " + "rgba(0, 0, 0, 0.6)",
+        border: "1px solid rgba(0, 0, 0, 0.6)",
         boxShadow: "0px 0px 10px 5px rgba(" + pRgb + ",0.11)", //"rgba(0,0,0,0.6)", // + ", 0px 0px 10px " + p,
       },
     },

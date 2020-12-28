@@ -1,7 +1,5 @@
 import { Box, Divider } from "@material-ui/core";
 import React from "react";
-import IconBtn from "../nav/IconBtn";
-import CGContainer from "./CGContainer";
 import CoolGrid from "./CoolGrid";
 
 export default function CoolMiniGrid(props) {
